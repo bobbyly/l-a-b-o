@@ -1688,7 +1688,22 @@ var ntc = {
 
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
-  // document.styleSheets.setProperty('main-bg-color', '#' + randomColor); 
-  // document.documentElement.style.setProperty('main-bg-color', '#' + randomColor);  
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
-  console.log('#' + randomColor)
+  console.log(randomColor)
+
+  function invertColor(hexTripletColor) {
+    var color = hexTripletColor;
+    color = color.substring(1); // remove #
+    color = parseInt(color, 16); // convert to integer
+    color = 0xFFFFFF ^ color; // invert three bytes
+    color = color.toString(16); // convert to hex
+    color = ("000000" + color).slice(-6); // pad with leading zeros
+    color = "#" + color; // prepend #
+    return color;
+}
+
+  var inverseColor = invertColor(randomColor)
+  document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
+  console.log(inverseColor)
+
+  
