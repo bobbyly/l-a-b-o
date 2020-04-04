@@ -1,0 +1,37 @@
+body {
+	background-color: #ffffff;
+	height: 100%;
+	width: 100%;
+}
+
+h1                  { font: bold 20px Helvetica, Sans-Serif; letter-spacing: -1px; }
+
+input[type=text]    { padding: 10px; color: #999; font: bold 20px Helvetica, Sans-Serif; 
+                      width: 60px; margin: 10px 0; }  
+#randomnumber       { font-size: 80px;  }
+
+span#character	{ 
+	color: #000000; font: bold 72px Sans-Serif; 
+	float: left; width: 5%;
+	justify-content: center;
+	align-items: center; 
+}
+
+#symbol-block { 
+	float: left; 
+	padding: 5%;
+}
+
+#colour-name-block { 
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 15%;
+	font: bold 48px Sans-Serif;
+	color: #000;
+	mix-blend-mode: difference;
+}
