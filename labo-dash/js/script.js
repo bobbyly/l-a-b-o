@@ -1703,7 +1703,7 @@ var ntc = {
 }
 
   var inverseColor = invertColor(randomColor)
-  document.styleSheets[0].cssRules[0].style.setProperty('--font-color', inverseColor); 
+  document.styleSheets[0].cssRules[0].style.setProperty('--font-colour', inverseColor); 
   console.log(inverseColor)
 
   
