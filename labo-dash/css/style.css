@@ -9,7 +9,7 @@ body {
 }
 
 span#character	{ 
-	color: --font-colour; 
+	color: var(--font-colour); 
 	font: bold 72px Sans-Serif; 
 	float: left; width: 5%;
 	justify-content: center;
@@ -31,6 +31,6 @@ span#character	{
 	justify-content: center;
 	min-height: 15%;
 	font: bold 48px Sans-Serif;
-	color: --font-colour;
+	color: var(--font-colour);
 	mix-blend-mode: difference;
 }
