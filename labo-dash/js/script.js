@@ -1688,7 +1688,7 @@ var ntc = {
 
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
-  document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
+  document.styleSheets[0].cssRules[1].style.setProperty('background-color', '#' + randomColor); 
   console.log(randomColor)
 
   function invertColor(hexTripletColor) {
@@ -1703,7 +1703,7 @@ var ntc = {
 }
 
   var inverseColor = invertColor(randomColor)
-  document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
+  document.styleSheets[0].cssRules[0].style.setProperty('--font-color', inverseColor); 
   console.log(inverseColor)
 
   

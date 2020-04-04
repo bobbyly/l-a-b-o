@@ -1,3 +1,7 @@
+* {
+	--font-colour: #000;
+}
+
 body {
 	background-color: #ffffff;
 	height: 100%;
@@ -5,7 +9,8 @@ body {
 }
 
 span#character	{ 
-	color: #000000; font: bold 72px Sans-Serif; 
+	color: --font-colour; 
+	font: bold 72px Sans-Serif; 
 	float: left; width: 5%;
 	justify-content: center;
 	align-items: center; 
@@ -26,6 +31,6 @@ span#character	{
 	justify-content: center;
 	min-height: 15%;
 	font: bold 48px Sans-Serif;
-	color: #fff;
+	color: --font-colour;
 	mix-blend-mode: difference;
 }
