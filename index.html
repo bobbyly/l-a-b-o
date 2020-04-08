@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <meta charset="utf-8">
-    <title>A Colour Temperature Space</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="colour-space.css"> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>l-a-b-o--d-a-s-h</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+</head>
 
-  </head>
-  
-  <body>
+<script type="text/javascript" src="js/script.js"></script>
+
+
+<body>
+
+        
+	<div id="symbol-block">
+        
+        <script>
+            document.write("<span id='character'>");
+            var randomnumber=Math.floor(Math.random()*255+9728);
+            for (var i=0; i<1; i++) {
+            document.write("&#"+randomnumber.toString()+";");
+            }
+            document.write("</span>");
+        </script>
+
+    </div>
     
-
-  <div class="mouse-cursor-gradient-tracking">
-    <span>Hover over me
-    </span>
-  </div>
-
-
-  <div class="bgd">
-    <span>4000K</span>
-  </div>
-
-  <script type="text/javascript" src="colour-space.js"></script>
-
+    <div id="colour-name-block">
+        <script type="text/javascript">
+            var n_match  = ntc.name(randomColor);
+            document.write("<span id='colour-name'>" + n_match[1].toString() + "</span>");
+            document.write("<span id='colour-code'>#" + n_match[0].toString() + "</span>");
+        </script>
+    </div>
 </body>
+
+</html>

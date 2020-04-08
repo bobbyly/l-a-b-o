@@ -5,7 +5,7 @@ body {
 }
 
 span#character	{ 
-	color: #000; 
+	color: #888888; 
 	font: bold 72px Sans-Serif; 
 	float: left; width: 5%;
 	justify-content: center;
@@ -13,6 +13,7 @@ span#character	{
 }
 
 #symbol-block { 
+	position: fixed;
 	float: left; 
 	padding: 5%;
 }
@@ -26,7 +27,14 @@ span#character	{
 	display: flex;
 	justify-content: center;
 	min-height: 15%;
-	font: bold 48px Sans-Serif;
-	color: #fff;
+	font: #888888;
 	mix-blend-mode: difference;
+}
+
+span#colour-code	{ 
+	color: #888888; 
+	font: bold 36px Sans-Serif; 
+	float: left; width: 5%;
+	justify-content: center;
+	align-items: center; 
 }
