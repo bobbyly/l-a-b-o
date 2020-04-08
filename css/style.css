@@ -28,16 +28,18 @@ span#character	{
 	display: flex;
 	justify-content: center;
 	min-height: 15%;
-	color: #888888; 
-	font: bold 72px Sans-Serif;
 	mix-blend-mode: difference;
+	color: #888888; 
+	float: left; 
+	justify-content: center;
+	align-items: center; 
+	text-align: center;
+}
+
+span#colour-name	{ 
+	font: bold 72px Sans-Serif; 
 }
 
 span#colour-code	{ 
-	color: #888888; 
-	font: bold 36px Sans-Serif; 
-	float: left; 
-	width: 5%;
-	justify-content: center;
-	align-items: center; 
+	font: bold 18px Sans-Serif; 
 }
