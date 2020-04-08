@@ -7,7 +7,8 @@ body {
 span#character	{ 
 	color: #888888; 
 	font: bold 72px Sans-Serif; 
-	float: left; width: 5%;
+	float: left; 
+	width: 5%;
 	justify-content: center;
 	align-items: center; 
 }
@@ -27,14 +28,16 @@ span#character	{
 	display: flex;
 	justify-content: center;
 	min-height: 15%;
-	font: #888888;
+	color: #888888; 
+	font: bold 72px Sans-Serif;
 	mix-blend-mode: difference;
 }
 
 span#colour-code	{ 
 	color: #888888; 
 	font: bold 36px Sans-Serif; 
-	float: left; width: 5%;
+	float: left; 
+	width: 5%;
 	justify-content: center;
 	align-items: center; 
 }
