@@ -41,9 +41,12 @@ span#colour-code	{
 }
 
 #user-time {
-	position: fixed; 
-	top: 5%; 
-	right: 5%; 
-	font: bold 72px Sans-Serif;
-	line-height: 1;
+	font: bold 72px Sans-Serif; 
+	float: right; 
+	width: 5%;
+	justify-content: center;
+	align-items: center; 
+	position: fixed;
+	padding: 5%;
+	color: #000000;
 }
