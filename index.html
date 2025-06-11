@@ -28,7 +28,21 @@
         </script>
 
     </div>
-    
+
+<div id="colour-name-block">
+    <p>
+        <span id="colour-name"></span><br>
+        <span id="colour-code"></span>
+    </p>
+</div>
+
+<script type="text/javascript">
+    var n_match = ntc.name(randomColor); // [hex, name, exactMatch]
+    document.getElementById('colour-name').textContent = n_match[1];
+    document.getElementById('colour-code').textContent = n_match[0];
+</script>
+	
+<!-- 
     <div id="colour-name-block">
         <script type="text/javascript">
             var n_match  = ntc.name(randomColor);
@@ -36,7 +50,7 @@
             document.write("<span id='colour-code'>" + n_match[0].toString() + "</span></p>");
         </script>
     </div>
-
+ -->
 </body>
 
 </html>
