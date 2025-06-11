@@ -1714,8 +1714,7 @@ function inversecolor(hex) {
 
 
   var inverseColor = inversecolor(randomColor)
-  document.styleSheets[0].cssRules[1].style.setProperty('color', inverseColor); 
-  document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor);
+  document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
   console.log("inverse/font colour: "+ inverseColor)
 
   
