@@ -39,3 +39,11 @@ span#colour-name	{
 span#colour-code	{ 
 	font: bold 18px Sans-Serif; 
 }
+
+#user-time {
+	position: fixed; 
+	top: 10px; 
+	right: 10px; 
+	font-family: sans-serif; 
+	font-size: 18px;
+}
