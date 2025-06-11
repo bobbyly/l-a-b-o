@@ -1692,18 +1692,26 @@ var ntc = {
   console.log(randomColor)
 
 function inversecolor(hex) {
+    if (!hex.startsWith('#')) {
+        hex = '#' + hex;
+    }
+
     if (!/^#([0-9A-F]{3}){1,2}$/i.test(hex)) {
         throw new Error('Invalid HEX color.');
     }
+
     hex = hex.toLowerCase();
     if (hex.length === 4) {
         hex = '#' + [...hex.slice(1)].map(ch => ch + ch).join('');
     }
+
     const r = 255 - parseInt(hex.slice(1, 3), 16);
     const g = 255 - parseInt(hex.slice(3, 5), 16);
     const b = 255 - parseInt(hex.slice(5, 7), 16);
+
     return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
+
 
   var inverseColor = inversecolor(randomColor)
   document.styleSheets[0].cssRules[1].style.setProperty('color', inverseColor); 
