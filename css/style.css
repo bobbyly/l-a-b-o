@@ -5,17 +5,13 @@ body {
 	color: #000000; 
 }
 
-span#character	{ 
+#character-container { 
 	font: bold 72px Sans-Serif; 
 	float: left; 
 	width: 5%;
 	justify-content: center;
 	align-items: center; 
-}
-
-#symbol-block { 
 	position: fixed;
-	float: left; 
 	padding: 5%;
 }
 
