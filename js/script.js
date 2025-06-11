@@ -1691,18 +1691,21 @@ var ntc = {
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
   console.log(randomColor)
 
-  function invertColor(hexTripletColor) {
-    var color = hexTripletColor;
-    color = color.substring(1); // remove #
-    color = parseInt(color, 16); // convert to integer
-    color = 0xFFFFFF ^ color; // invert three bytes
-    color = color.toString(16); // convert to hex
-    color = ("000000" + color).slice(-6); // pad with leading zeros
-    color = "#" + color; // prepend #
-    return color;
+function inversecolor(hex) {
+    if (!/^#([0-9A-F]{3}){1,2}$/i.test(hex)) {
+        throw new Error('Invalid HEX color.');
+    }
+    hex = hex.toLowerCase();
+    if (hex.length === 4) {
+        hex = '#' + [...hex.slice(1)].map(ch => ch + ch).join('');
+    }
+    const r = 255 - parseInt(hex.slice(1, 3), 16);
+    const g = 255 - parseInt(hex.slice(3, 5), 16);
+    const b = 255 - parseInt(hex.slice(5, 7), 16);
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
 
-  var inverseColor = invertColor(randomColor)
+  var inverseColor = inversecolor(randomColor)
   document.styleSheets[0].cssRules[1].style.setProperty('color', inverseColor); 
   document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor);
   console.log(inverseColor)
