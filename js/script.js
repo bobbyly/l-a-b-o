@@ -1709,11 +1709,11 @@ function inversecolor(hex) {
     const g = 255 - parseInt(hex.slice(3, 5), 16);
     const b = 255 - parseInt(hex.slice(5, 7), 16);
 
-    return [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
 
 
-  var inverseColor = inversecolor(randomColor)
-  document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
-  document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
+var inverseColor = inversecolor(randomColor)
+document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
+document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
 console.log("inverse/font colour: "+ inverseColor)
