@@ -1689,6 +1689,7 @@ var ntc = {
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
   var invertedColor = inversecolor(randomColor);
+  var contrastTextColour = getReadableTextColor(randomColor);
 
 function inversecolor(hex) {
     if (!hex.startsWith('#')) {
@@ -1709,6 +1710,22 @@ function inversecolor(hex) {
     const b = 255 - parseInt(hex.slice(5, 7), 16);
 
     return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+function getReadableTextColor(hexColor) {
+    // Remove '#' if present
+    hexColor = hexColor.replace('#', '');
+
+    // Parse RGB
+    const r = parseInt(hexColor.substr(0, 2), 16);
+    const g = parseInt(hexColor.substr(2, 2), 16);
+    const b = parseInt(hexColor.substr(4, 2), 16);
+
+    // Calculate luminance
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+    // Return black or white depending on brightness
+    return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1733,14 +1750,23 @@ window.addEventListener('DOMContentLoaded', () => {
   // change body bgd colour
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
   console.log("background colour: "+ randomColor);
+ /*
   // change #character-container font colour
   document.styleSheets[0].cssRules[1].style.setProperty('color', invertedColor); 
   // change #colour-name-block font colour
   document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
-    // change #user-time font colour
+  // change #user-time font colour
   document.styleSheets[0].cssRules[5].style.setProperty('color', invertedColor); 
   console.log("inverted/font colour: "+ invertedColor);
-
+*/
+  // change #character-container font colour
+  document.styleSheets[0].cssRules[1].style.setProperty('color', contrastTextColour); 
+  // change #colour-name-block font colour
+  document.styleSheets[0].cssRules[2].style.setProperty('color', contrastTextColour); 
+  // change #user-time font colour
+  document.styleSheets[0].cssRules[5].style.setProperty('color', contrastTextColour); 
+  console.log("contrast friendly text colour: "+ contrastTextColour);
+  
 function updateTime() {
     const now = new Date();
     const timeString = now.toLocaleTimeString([], {
