@@ -44,5 +44,6 @@ span#colour-code	{
 	position: fixed; 
 	top: 5%; 
 	right: 5%; 
-	font: bold 72px Sans-Serif; 
+	font: bold 72px Sans-Serif;
+	padding: 5%;
 }
