@@ -1688,6 +1688,7 @@ var ntc = {
   
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
+  var invertedColor = inversecolor(randomColor);
 
 function inversecolor(hex) {
     if (!hex.startsWith('#')) {
@@ -1715,14 +1716,6 @@ window.addEventListener('DOMContentLoaded', () => {
   var n_match = ntc.name(randomColor); // [hex, name, exactMatch]
   document.getElementById('colour-name').textContent = n_match[1];
   document.getElementById('colour-code').textContent = n_match[0];
-  
-  document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
-  console.log("background colour: "+ randomColor)
-  
-  var invertedColor = inversecolor(randomColor)
-  document.styleSheets[0].cssRules[1].style.setProperty('color', invertedColor); 
-  document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
-  console.log("inverted/font colour: "+ invertedColor)
  
   // Create a span element for the character
   const span = document.createElement('span');
@@ -1738,5 +1731,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // Append the span to the container
   document.getElementById('character-container').appendChild(span);
 
-
+  document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
+  console.log("background colour: "+ randomColor);
+  document.styleSheets[0].cssRules[1].style.setProperty('color', invertedColor); 
+  document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
+  console.log("inverted/font colour: "+ invertedColor);
 });
