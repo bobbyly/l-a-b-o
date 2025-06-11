@@ -5,7 +5,7 @@ body {
 }
 
 span#character	{ 
-	color: #888888; 
+	color: #000000; 
 	font: bold 72px Sans-Serif; 
 	float: left; 
 	width: 5%;
@@ -17,7 +17,6 @@ span#character	{
 	position: fixed;
 	float: left; 
 	padding: 5%;
-	color: #000000;
 }
 
 #colour-name-block { 
