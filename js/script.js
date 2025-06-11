@@ -1741,15 +1741,20 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[5].style.setProperty('color', invertedColor); 
   console.log("inverted/font colour: "+ invertedColor);
 
-  function updateTime() {
+function updateTime() {
     const now = new Date();
-    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const timeString = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
     document.getElementById('user-time').textContent = timeString;
 }
 
 // Update every 15 seconds
 setInterval(updateTime, 15000);
 updateTime(); // Initial call
+
 
   
 });
