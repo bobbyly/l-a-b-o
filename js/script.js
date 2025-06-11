@@ -1719,9 +1719,9 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
   console.log("background colour: "+ randomColor)
   
-  var inverseColor = inversecolor(randomColor)
-  document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
-  console.log("inverse/font colour: "+ inverseColor)
+  var invertedColor = inversecolor(randomColor)
+  document.styleSheets[0].cssRules[0].style.setProperty('color', invertedColor); 
+  console.log("inverted/font colour: "+ invertedColor)
  
   // Create a span element for the character
   const span = document.createElement('span');
