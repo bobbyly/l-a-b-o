@@ -17,6 +17,7 @@ span#character	{
 	position: fixed;
 	float: left; 
 	padding: 5%;
+	color: #000000;
 }
 
 #colour-name-block { 
