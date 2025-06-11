@@ -1685,7 +1685,8 @@ var ntc = {
   }
   
   ntc.init();
-
+window.addEventListener('DOMContentLoaded', () => {
+  
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
@@ -1712,8 +1713,9 @@ function inversecolor(hex) {
     return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
 
-
 var inverseColor = inversecolor(randomColor)
 document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
 document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
 console.log("inverse/font colour: "+ inverseColor)
+  
+});
