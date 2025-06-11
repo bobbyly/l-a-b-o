@@ -1737,6 +1737,8 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[1].style.setProperty('color', invertedColor); 
   // change #colour-name-block font colour
   document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
+    // change #user-time font colour
+  document.styleSheets[0].cssRules[5].style.setProperty('color', invertedColor); 
   console.log("inverted/font colour: "+ invertedColor);
 
   function updateTime() {
