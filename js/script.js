@@ -1738,4 +1738,16 @@ window.addEventListener('DOMContentLoaded', () => {
   // change #colour-name-block font colour
   document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
   console.log("inverted/font colour: "+ invertedColor);
+
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('user-time').textContent = timeString;
+}
+
+// Update every 15 seconds
+setInterval(updateTime, 15000);
+updateTime(); // Initial call
+
+  
 });
