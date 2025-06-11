@@ -42,7 +42,7 @@ span#colour-code	{
 
 #user-time {
 	position: fixed; 
-	top: 95%; 
-	right: 95%; 
+	top: 5%; 
+	right: 5%; 
 	font: bold 72px Sans-Serif; 
 }
