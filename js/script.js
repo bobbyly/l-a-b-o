@@ -1685,7 +1685,6 @@ var ntc = {
   }
   
   ntc.init();
-window.addEventListener('DOMContentLoaded', () => {
   
   var colorNamesList = Math.floor(ntc.names.length * Math.random());
   var randomColor = ntc.names[colorNamesList][0];
@@ -1710,23 +1709,25 @@ function inversecolor(hex) {
 
     return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  var n_match = ntc.name(randomColor); // [hex, name, exactMatch]
+  document.getElementById('colour-name').textContent = n_match[1];
+  document.getElementById('colour-code').textContent = n_match[0];
   
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
   console.log("background colour: "+ randomColor)
   
-var inverseColor = inversecolor(randomColor)
-document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
-document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
-console.log("inverse/font colour: "+ inverseColor)
+  var inverseColor = inversecolor(randomColor)
+  document.styleSheets[0].cssRules[0].style.setProperty('color', inverseColor); 
+  document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
+  console.log("inverse/font colour: "+ inverseColor)
 
-    document.write("<span id='character'>");
-    var randomnumber=Math.floor(Math.random()*255+9728);
-    for (var i=0; i<1; i++) {
-    document.write("&#"+randomnumber.toString()+";");
-    }
-    document.write("</span>");
+  var randomnumber=Math.floor(Math.random()*255+9728);
+  for (var i=0; i<1; i++) {
+  document.getElementById('character').textContent = ("&#"+randomnumber.toString()+";");
+  }
 
-    var n_match = ntc.name(randomColor); // [hex, name, exactMatch]
-    document.getElementById('colour-name').textContent = n_match[1];
-    document.getElementById('colour-code').textContent = n_match[0];
+
 });
