@@ -46,4 +46,5 @@ span#colour-code	{
 	right: 5%; 
 	font: bold 72px Sans-Serif;
 	padding: 5%;
+	line-height: 1;
 }
