@@ -13,6 +13,7 @@ body {
 	align-items: center; 
 	position: fixed;
 	padding: 5%;
+	color: #000000;
 }
 
 #colour-name-block { 
@@ -29,6 +30,7 @@ body {
 	justify-content: center;
 	align-items: center; 
 	text-align: center;
+	color: #000000;
 }
 
 span#colour-name	{ 
