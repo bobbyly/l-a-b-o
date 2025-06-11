@@ -1730,10 +1730,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Append the span to the container
   document.getElementById('character-container').appendChild(span);
-
+  // change body bgd colour
   document.styleSheets[0].cssRules[0].style.setProperty('background-color', '#' + randomColor); 
   console.log("background colour: "+ randomColor);
+  // change #character-container font colour
   document.styleSheets[0].cssRules[1].style.setProperty('color', invertedColor); 
+  // change #colour-name-block font colour
   document.styleSheets[0].cssRules[2].style.setProperty('color', invertedColor); 
   console.log("inverted/font colour: "+ invertedColor);
 });
