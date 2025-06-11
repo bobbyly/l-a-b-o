@@ -1724,10 +1724,19 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[3].style.setProperty('color', inverseColor); 
   console.log("inverse/font colour: "+ inverseColor)
 
-  var randomnumber=Math.floor(Math.random()*255+9728);
-  for (var i=0; i<1; i++) {
-  document.getElementById('character').textContent = ("&#"+randomnumber.toString()+";");
-  }
+  // Create a span element for the character
+  const span = document.createElement('span');
+  span.id = 'character';
+
+  // Generate a random Unicode character from range U+2600 to U+26FF (misc symbols)
+  const randomNumber = Math.floor(Math.random() * 255) + 9728;
+  const character = String.fromCharCode(randomNumber);
+
+  // Set the character as the content of the span
+  span.textContent = character;
+
+  // Append the span to the container
+  document.getElementById('character-container').appendChild(span);
 
 
 });
