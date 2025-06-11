@@ -1,3 +1,19 @@
+// Time block
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+    document.getElementById('user-time').textContent = timeString;
+}
+
+// Update every 10 seconds
+setInterval(updateTime, 10000);
+// Initial call
+updateTime(); 
+
 /*
 
 +-----------------------------------------------------------------+
@@ -1765,22 +1781,5 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[2].style.setProperty('color', contrastTextColour); 
   // change #user-time font colour
   document.styleSheets[0].cssRules[5].style.setProperty('color', contrastTextColour); 
-  console.log("contrast friendly text colour: "+ contrastTextColour);
-  
-function updateTime() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    });
-    document.getElementById('user-time').textContent = timeString;
-}
-
-// Update every 15 seconds
-setInterval(updateTime, 15000);
-updateTime(); // Initial call
-
-
-  
+  console.log("contrast friendly text colour: "+ contrastTextColour);  
 });
