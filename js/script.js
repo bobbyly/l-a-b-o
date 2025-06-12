@@ -1,19 +1,3 @@
-// Time block
-function updateTime() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    });
-    document.getElementById('user-time').textContent = timeString;
-}
-
-// Update every 10 seconds
-setInterval(updateTime, 10000);
-// Initial call
-updateTime(); 
-
 /*
 
 +-----------------------------------------------------------------+
@@ -1743,6 +1727,22 @@ function getReadableTextColor(hexColor) {
     // Return black or white depending on brightness
     return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
+
+// Time block
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+    document.getElementById('user-time').textContent = timeString;
+}
+
+// Update every 2 seconds
+setInterval(updateTime, 2000);
+// Initial call
+updateTime(); 
 
 window.addEventListener('DOMContentLoaded', () => {
 
