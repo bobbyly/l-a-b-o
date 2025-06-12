@@ -19,22 +19,24 @@ body {
 	bottom: 0;
 	width: 100%;
 	align-items: center;
-	display: flex;
 	justify-content: center;
 	min-height: 15%;
-	float: left; 
 	justify-content: center;
 	align-items: center; 
 	text-align: center;
 	color: #000000;
 }
 
+
+
 span#colour-name	{ 
-	font: bold 72px Sans-Serif; 
+	font: bold 72px Sans-Serif;
+	display: block; 
 }
 
 span#colour-code	{ 
-	font: bold 18px Sans-Serif; 
+	font: bold 18px Sans-Serif;
+	display: block;  
 }
 
 #user-time {
@@ -45,4 +47,46 @@ span#colour-code	{
 	padding: 5%;
 	color: #000000;
 	line-height: 1;
+}
+
+#history-container {
+	position: fixed;
+	font: bold 16px Sans-Serif; 
+	display: block;
+	padding: 5%;
+	color: #000000;
+	bottom: 0;
+	right: 0;
+}
+
+#history-container h1 {
+
+  font: bold 20px Sans-Serif; 
+}
+
+#history-container h2 {
+
+  font: bold 16px Sans-Serif; 
+}
+
+#history-list {
+
+letter-spacing: 0.5em;
+
+
+}
+
+ .history-item {
+  /* width: 100%; */
+  /* height: 100%; */
+  /* color: #000000; */
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* line-height: 1%; */
+  
+}
+
+.history-item .color-code {
+letter-spacing: 0.05em;
+display: grid;
 }

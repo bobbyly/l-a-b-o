@@ -1765,9 +1765,11 @@ window.addEventListener('DOMContentLoaded', () => {
   document.styleSheets[0].cssRules[2].style.setProperty('color', contrastTextColour); 
   // change #user-time font colour
   document.styleSheets[0].cssRules[5].style.setProperty('color', contrastTextColour); 
+    // change #history font colour
+  document.styleSheets[0].cssRules[6].style.setProperty('color', contrastTextColour); 
   console.log("contrast friendly text colour: "+ contrastTextColour);  
 
-  // Time block
+// Time block
 function updateTime() {
     const now = new Date();
     const timeString = now.toLocaleTimeString([], {
@@ -1782,4 +1784,54 @@ function updateTime() {
 setInterval(updateTime, 1000);
 // Initial call
 updateTime(); 
+
+// Combination history
+
+    const historyList = document.getElementById('history-list');
+    const MAX_HISTORY = 5;
+
+    // --- Main Logic on Page Load ---
+
+    // 1. Load history and the last known config from localStorage
+    let history = JSON.parse(localStorage.getItem('generationHistory')) || [];
+    const lastConfig = JSON.parse(localStorage.getItem('currentConfig'));
+
+    // 2. If there was a 'lastConfig', add it to the history
+    if (lastConfig) {
+        // (Optional) Prevent adding duplicates if page is refreshed without change
+        if (history.length === 0 || history[0].color !== lastConfig.color || history[0].symbol !== lastConfig.symbol) {
+             history.unshift(lastConfig);
+        }
+    }
+
+    // 3. Keep the history limited to the max number of items
+    if (history.length > MAX_HISTORY) {
+        history = history.slice(0, MAX_HISTORY);
+    }
+    
+    // 4. Save the potentially updated history back to localStorage
+    localStorage.setItem('generationHistory', JSON.stringify(history));
+
+    // 5. Render the history list on the page
+    renderHistory(history);
+
+    // 6. Save the NEW configuration as 'currentConfig' for the NEXT refresh
+    const newCurrentConfig = { symbol: character, color: randomColor};
+    localStorage.setItem('currentConfig', JSON.stringify(newCurrentConfig));
+
+
+    // --- Helper Function to Render the History ---
+    // (This function does not need to change)
+    function renderHistory(historyArray) {
+        historyList.innerHTML = ''; // Clear the list first
+        
+        historyArray.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('history-item');
+            historyItem.style.backgroundColor = item.color;
+            historyItem.innerHTML = `${item.symbol}<span class="color-code">${item.color} </span>`;
+            historyList.appendChild(historyItem);
+        });
+    }
+
 });
