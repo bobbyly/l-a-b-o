@@ -1728,22 +1728,6 @@ function getReadableTextColor(hexColor) {
     return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
 
-// Time block
-function updateTime() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    });
-    document.getElementById('user-time').textContent = timeString;
-}
-
-// Update every 2 seconds
-setInterval(updateTime, 2000);
-// Initial call
-updateTime(); 
-
 window.addEventListener('DOMContentLoaded', () => {
 
   var n_match = ntc.name(randomColor); // [hex, name, exactMatch]
@@ -1782,4 +1766,20 @@ window.addEventListener('DOMContentLoaded', () => {
   // change #user-time font colour
   document.styleSheets[0].cssRules[5].style.setProperty('color', contrastTextColour); 
   console.log("contrast friendly text colour: "+ contrastTextColour);  
+
+  // Time block
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+    document.getElementById('user-time').textContent = timeString;
+}
+
+// Update every second
+setInterval(updateTime, 1000);
+// Initial call
+updateTime(); 
 });
